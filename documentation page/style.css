@@ -92,9 +92,9 @@ header {
     font-family: 'Roboto', sans-serif;
   
   }
-  .content p {
+  .content > p {
     font-family: 'Roboto Condensed', sans-serif;
-    white-space: pre-wrap;
+    white-space: pre;
   }
 
 
