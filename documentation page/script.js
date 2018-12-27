@@ -11,4 +11,5 @@ function showContent() {
 
 }
 
+
 sideBarBtn.forEach(btn => btn.addEventListener('click', showContent))
