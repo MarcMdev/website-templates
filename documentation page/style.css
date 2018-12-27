@@ -114,6 +114,7 @@ header {
       border: 1px solid var(--default-primary-color);
       border-radius: 0.3rem;
 
+      cursor: default;
       transition: opacity 0.15s ease-in;
     }
       #profile img {
@@ -174,6 +175,16 @@ header {
       background: var(--dark-primary-color);
     }
 
+  #menu-display {
+    position: absolute;
+
+
+    width: 50px;
+    height: 30px;
+
+    background-color: crimson;
+  }
+    #menu-display input {display: none}
 
 /* ================== */
 /* ----- MAIN ----- */
@@ -259,5 +270,15 @@ footer {
 
 
 /* ================================ */
+
+/* ----- MEDIA QUERY ----- */
+
+@media (max-width: 600px) {
+
+  .sb-btn {
+    background: red;
+  }
+
+}
 
 

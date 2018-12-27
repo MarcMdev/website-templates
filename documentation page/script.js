@@ -1,5 +1,6 @@
 const sideBarBtn = Array.from(document.querySelectorAll('.sb-btn'))
 const content = Array.from(document.querySelectorAll('.content'));
+const profileInput = document.querySelector('#profile-input');
 
 function showContent() {
 
@@ -11,5 +12,13 @@ function showContent() {
 
 }
 
-
 sideBarBtn.forEach(btn => btn.addEventListener('click', showContent))
+
+// Uncheck the Author button on window click
+window.addEventListener('mouseup', (e)=> {
+
+  if (profileInput.checked === true) {
+    setTimeout(() => profileInput.checked = false , 100);
+  }
+  
+})
