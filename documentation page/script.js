@@ -14,8 +14,7 @@ function showContent() {
   content.forEach(page => page.classList.remove('block'));
   content[sideBarBtn.indexOf(this)].classList.add('block');
 
-  menuBtn.classList.toggle('focus');
-  sideBar.classList.toggle('slide-in');
+  windowClickSideBar();
 
 };
 
@@ -24,16 +23,13 @@ function slideIn() {
   menuBtn.classList.toggle('focus');
 };
 
-sideBarBtn.forEach(btn => btn.addEventListener('click', showContent));
-
-// Uncheck the Author button on window click
-// Hide SideBar
-window.addEventListener('mouseup', (e)=> {
-
+function windowClickProfile() {
   if (profileInput.checked === true) {
     setTimeout(() => profileInput.checked = false , 100);
   };
+}
 
+function windowClickSideBar() {
   if (
     sideBar.classList.contains('slide-in') &&
     (window.innerWidth < 769)
@@ -45,8 +41,13 @@ window.addEventListener('mouseup', (e)=> {
       }
     }, 100)
   }
+}
 
-});
-
+//Event Listenners
+sideBarBtn.forEach(btn => btn.addEventListener('click', showContent));
 //slide-in effect for side-bar on mobile version
 menuBtn.addEventListener('click', slideIn);
+// Uncheck the Author button on window click
+window.addEventListener('mouseup', windowClickProfile);
+// Hide SideBar on window click
+window.addEventListener('mouseup', windowClickSideBar);
