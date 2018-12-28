@@ -34,7 +34,10 @@ window.addEventListener('mouseup', (e)=> {
     setTimeout(() => profileInput.checked = false , 100);
   };
 
-  if (sideBar.classList.contains('slide-in')) {
+  if (
+    sideBar.classList.contains('slide-in') &&
+    (window.innerWidth < 769)
+  ) {
     setTimeout(()=> {
       if (sideBar.classList.contains('slide-in')) {
         menuBtn.classList.toggle('focus');
